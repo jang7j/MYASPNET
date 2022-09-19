@@ -18,5 +18,9 @@ namespace MYASPNET
 
         }
 
+        public Product GetProduct(int id)
+        {
+            return _conn.QuerySingle<Product>("SELECT * FROM products WHERE productID = @id", new { id });
+        }
     }
 }
